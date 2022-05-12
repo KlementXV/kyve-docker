@@ -1,13 +1,16 @@
 #!/bin/bash
 
+LINK_CSV='https://raw.githubusercontent.com/clementlvx/kyve-docker/main/data/pools.csv'
 LINK_COMPOSE='https://raw.githubusercontent.com/clementlvx/kyve-docker/main/docker-compose.yml'
 
 import_csv() {
+   wget ${LINK_CSV} -O .pools.csv
    pools_csv=()
    while IFS= read -r line
    do
    pools_csv+=("$line")
-   done < <(tail -n +2 input.csv)
+   done < <(tail -n +2 .pools.csv)
+   rm .pools.csv
 }
 
 csv_pools_names() {

@@ -51,7 +51,7 @@ choose_pool() {
       echo "Selected pool: $character"
       req_variables
       pool_selected_id=$(($REPLY-1))
-      pool_selected_Name=$(echo ${pools_csv[$pool_selected_id]} | cut -d ";" -f2)
+      pool_selected_Name=$(echo ${pools_csv[$pool_selected_id]} | cut -d ";" -f2 | tr '[:upper:]' '[:lower:]')
       pool_selected_Link=$(echo ${pools_csv[$pool_selected_id]} | cut -d ";" -f3)
 
       dl_node $pool_selected_Link

@@ -3,5 +3,5 @@ version: "3.9"
 services:
   NODE_NAME:
     build: .
-    command: ["--poolId", "4", "--mnemonic", "THE_MNEMONIC", "--initialStake", "THE_STACKE", "--keyfile", "./arweave.json", "--network", "korellia"]
+    command: ["--poolId", "THE_POOL", "--mnemonic", "THE_MNEMONIC", "--initialStake", "THE_STACKE", "--keyfile", "./arweave.json", "--network", "korellia"]
     restart: always

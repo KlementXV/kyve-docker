@@ -33,6 +33,7 @@ dl_compose() {
 
 change_compose() {
     sed -i "s/NODE_NAME/${pool_selected_Name}/" docker-compose.yml
+    sed -i "s/THE_POOL/${pool_selected_id}/" docker-compose.yml
     sed -i "s/THE_MNEMONIC/${node_mnemonic}/" docker-compose.yml
     sed -i "s/THE_STACKE/$node_stacke/" docker-compose.yml
 }
